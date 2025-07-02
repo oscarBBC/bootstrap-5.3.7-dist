@@ -43,7 +43,7 @@
                             ข้อมูลเพิ่มเติม
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">สมัครสมาชิก</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">สมัครสมาชิก</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -70,6 +70,7 @@
                     </li>
                 </ul>
             </div>
+        </div>
     </nav>
     <!--slideshow-->
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -155,7 +156,7 @@
             </div>
             <div class="col ms-3 p-3">
                 <div class="bg-white mb-3">
-                    <img src="img/8.jpg" style="width: 90%">
+                    <img src="img/8.jpg" style="width: 75%">
                 </div>
                 <!-- Modal -->
                 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -187,16 +188,114 @@
                     </div>
                 </div>
 
-
-
-
-
-                <script src="js/bootstrap.bundle.min.js"></script>
-
+                <!-- Create Account Modal -->
+                <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-info bg-opacity-25">
+                                <h5 class="modal-title w-100 text-center" id="registerModalLabel">Create Account</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form>
+                                <div class="modal-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">First name *</label>
+                                            <input type="text" class="form-control" placeholder="enter your first name"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Last name *</label>
+                                            <input type="text" class="form-control" placeholder="enter your last name"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Email*</label>
+                                            <input type="email" class="form-control" placeholder="enter your email"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Age</label>
+                                            <input type="number" class="form-control" value="18" min="1">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Password*</label>
+                                            <input type="password" class="form-control" placeholder="enter your password"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Confirm Password *</label>
+                                            <input type="password" class="form-control"
+                                                placeholder="enter your password again" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label d-block">Gender:</label>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="male"
+                                                    value="Male">
+                                                <label class="form-check-label" for="male">Male</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="female"
+                                                    value="Female">
+                                                <label class="form-check-label" for="female">Female</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label d-block">Hobbies:</label>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="music" value="Music">
+                                                <label class="form-check-label" for="music">Music</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="sports" value="Sports">
+                                                <label class="form-check-label" for="sports">Sports</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="travel" value="Travel">
+                                                <label class="form-check-label" for="travel">Travel</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="movies" value="Movies">
+                                                <label class="form-check-label" for="movies">Movies</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Source of Income</label>
+                                            <select class="form-select">
+                                                <option>Employed</option>
+                                                <option>Student</option>
+                                                <option>Business</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label d-block">Income</label>
+                                            <input type="range" class="form-range" min="0" max="100000" value="20000"
+                                                id="incomeRange" oninput="incomeOutput.value = incomeRange.value">
+                                            <output id="incomeOutput" class="ms-2">20000</output>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Upload Profile Picture</label>
+                                            <input type="file" class="form-control">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="form-label">Bio</label>
+                                            <textarea class="form-control" rows="2"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer justify-content-center">
+                                    <button type="submit" class="btn btn-success w-25">Create</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
-
-
-
-
-
 </html>
